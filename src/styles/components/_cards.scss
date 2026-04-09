@@ -5,7 +5,8 @@
 // ============================================================
 
 .card {
-  @apply bg-white rounded-lg overflow-hidden;
+  @apply bg-white overflow-hidden border-l-4 border-brand-blue;
+  border-radius: 0 $radius-md $radius-md 0;
   box-shadow: $shadow-card;
   transition: $trans-slow;
 
@@ -24,7 +25,8 @@
   }
 
   &__label {
-    @apply text-xs font-semibold uppercase tracking-widest text-brand-mid mb-2 block;
+    @apply font-semibold uppercase tracking-widest text-brand-mid mb-2 block;
+    font-size: 0.875rem;
     letter-spacing: 0.12em;
   }
 
@@ -44,9 +46,6 @@
 
   // Variants
   &--service {
-    @apply border-l-4 border-brand-blue;
-    border-radius: $radius-md;
-
     .card__icon {
       @apply w-12 h-12 rounded-md bg-brand-blue/10 flex items-center justify-center mb-4;
       color: $blue;
@@ -56,8 +55,6 @@
 
   &--testimonial {
     @apply p-8;
-    border-left: 4px solid $sky;
-    border-radius: $radius-md;
 
     &:hover { transform: none; }
 
@@ -67,8 +64,8 @@
     }
 
     .card__quote {
-      @apply text-brand-dark italic text-base leading-relaxed mb-4;
-      font-family: $font-display;
+      @apply text-brand-gray text-base leading-relaxed mb-4;
+      font-family: $font-body;
     }
 
     .card__author {

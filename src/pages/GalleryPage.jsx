@@ -126,7 +126,6 @@ export default function GalleryPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href={PHONE_HREF} className="btn btn--primary btn--lg">📞 Call {PHONE}</a>
-              <Link to="/contact" className="btn btn--outline btn--lg">Request a Quote</Link>
             </div>
           </div>
         </div>

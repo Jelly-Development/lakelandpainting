@@ -13,7 +13,7 @@ const services = [
 const areas = [
   'Lakeland','Kathleen','Bartow','Winter Haven',
   'Plant City','Mulberry','Lake Wales','Polk City',
-].map(n => ({ label: n, to: `/service-areas/${n.toLowerCase().replace(' ','-')}` }));
+].map(n => ({ label: n, to: `/${n.toLowerCase().replace(' ','-')}` }));
 
 function ChevronDown() {
   return (
@@ -111,9 +111,6 @@ export default function Navbar() {
               <a href={PHONE_HREF} className="navbar__phone">
                 <PhoneIcon />{PHONE}
               </a>
-              <a href={PHONE_HREF} className="btn btn--primary btn--sm">
-                Free Quote
-              </a>
             </div>
 
             {/* Mobile hamburger */}
@@ -175,8 +172,8 @@ export default function Navbar() {
         </div>
 
         <div className="mobile-menu__footer">
-          <a href={PHONE_HREF} className="btn btn--primary btn--lg w-full text-center">
-            Call {PHONE}
+          <a href={PHONE_HREF} className="btn btn--white btn--lg w-full text-center">
+            Call for a Quote
           </a>
         </div>
       </div>

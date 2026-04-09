@@ -17,15 +17,12 @@ export default {
           white:   '#FFFFFF',
         },
       },
-      fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body:    ['"Source Sans 3"', 'system-ui', 'sans-serif'],
-      },
       fontSize: {
-        'hero':  ['clamp(2.5rem, 6vw, 4.5rem)', { lineHeight: '1.08', letterSpacing: '-0.02em' }],
-        'h1':    ['clamp(2rem, 4vw, 3rem)',      { lineHeight: '1.15', letterSpacing: '-0.015em' }],
-        'h2':    ['clamp(1.5rem, 3vw, 2.25rem)', { lineHeight: '1.2' }],
-        'h3':    ['clamp(1.2rem, 2vw, 1.5rem)',  { lineHeight: '1.3' }],
+        xs: ['0.875rem', { lineHeight: '1.5' }],
+      },
+      fontFamily: {
+        display: ['"DM Serif Display"', 'Georgia', 'serif'],
+        body:    ['"Source Sans 3"', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '18':  '4.5rem',

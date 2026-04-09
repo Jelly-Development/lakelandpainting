@@ -8,6 +8,7 @@ const ServicesPage    = lazy(() => import('./pages/ServicesPage'));
 const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage'));
 const GalleryPage     = lazy(() => import('./pages/GalleryPage'));
 const ContactPage     = lazy(() => import('./pages/ContactPage'));
+const FontDemoPage    = lazy(() => import('./pages/FontDemoPage'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -39,14 +40,15 @@ function Layout() {
     <>
       <ScrollToTop />
       <Navbar />
-      <main id="main-content" style={{ paddingTop: '80px' }}>
+      <main id="main-content">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/"                    element={<HomePage />} />
             <Route path="/services/:service"   element={<ServicesPage />} />
-            <Route path="/service-areas/:area" element={<ServiceAreaPage />} />
+            <Route path="/:area" element={<ServiceAreaPage />} />
             <Route path="/gallery"             element={<GalleryPage />} />
             <Route path="/contact"             element={<ContactPage />} />
+            <Route path="/demo"               element={<FontDemoPage />} />
             <Route path="*"                    element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -6,13 +6,14 @@
 
 .navbar {
   @apply fixed top-0 left-0 right-0 z-50;
-  background: rgba(27,58,92,0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  border-bottom: 1px solid transparent;
   transition: $trans-slow;
 
   &--scrolled {
-    background: rgba(27,58,92,0.99);
+    background: rgba(27,58,92,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255,255,255,0.08);
     box-shadow: $shadow-deep;
   }
 
@@ -90,10 +91,9 @@
 
   &__dropdown-menu {
     @apply absolute top-full left-0 mt-1 py-2 min-w-48;
-    background: $navy;
-    border: 1px solid rgba(255,255,255,0.12);
+    background: $white;
     border-radius: $radius-md;
-    box-shadow: $shadow-deep;
+    box-shadow: $shadow-float;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -102,10 +102,14 @@
   }
 
   &__dropdown-item {
-    @apply block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10;
+    @apply block px-4 py-2 hover:bg-brand-blue/5;
+    font-size: 1rem;
+    color: $dark;
     font-family: $font-body;
     transition: $trans-base;
     white-space: nowrap;
+
+    &:hover { color: $blue; }
   }
 
   &__cta {
@@ -159,7 +163,11 @@
   }
 
   &__section {
-    @apply py-2;
+    @apply border-b border-white/10;
+
+    > button.mobile-menu__link {
+      border-bottom: none;
+    }
 
     &-label {
       @apply text-xs uppercase tracking-widest text-white/40 font-bold px-2 py-2;
@@ -171,6 +179,7 @@
     font-family: $font-body;
 
     &:hover { color: $sky; }
+    &:last-child { padding-bottom: 1rem; }
   }
 
   &__footer {
