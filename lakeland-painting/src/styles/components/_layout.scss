@@ -1,0 +1,146 @@
+@use '../base/variables' as *;
+
+// ============================================================
+// LAYOUT COMPONENTS
+// ============================================================
+
+// Page wrapper
+.container-site {
+  @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 1280px;
+}
+
+// Section spacing
+.section {
+  padding: $section-y 0;
+
+  &--sm {
+    padding: calc($section-y * 0.6) 0;
+  }
+
+  &--lg {
+    padding: calc($section-y * 1.3) 0;
+  }
+
+  &--cream {
+    background: $cream;
+  }
+
+  &--offwhite {
+    background: $offwhite;
+  }
+
+  &--navy {
+    background: $navy;
+  }
+
+  &--blue-gradient {
+    background: linear-gradient(160deg, $navy 0%, $blue 60%, $mid 100%);
+  }
+}
+
+// Hero banner
+.hero {
+  @apply relative overflow-hidden;
+  min-height: clamp(520px, 80vh, 780px);
+  background: linear-gradient(160deg, $navy 0%, $blue 55%, $mid 100%);
+  display: flex;
+  align-items: center;
+
+  &__overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(to right, rgba(27,58,92,0.92) 0%, rgba(27,58,92,0.60) 100%);
+  }
+
+  &__bg {
+    @apply absolute inset-0 w-full h-full object-cover;
+    filter: saturate(0.7) brightness(0.55);
+  }
+
+  &__content {
+    @apply relative z-10;
+  }
+}
+
+// Page hero (inner pages)
+.page-hero {
+  @apply relative overflow-hidden flex items-end;
+  min-height: 280px;
+  background: linear-gradient(135deg, $navy 0%, $blue 100%);
+  padding: 3rem 0 3.5rem;
+
+  &__pattern {
+    @apply absolute inset-0 opacity-10;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.15) 0px,
+      rgba(255,255,255,0.15) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  }
+}
+
+// CTA band
+.cta-band {
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, $navy 0%, $blue 100%);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+
+  &__pattern {
+    @apply absolute inset-0 opacity-5;
+    background-image: radial-gradient(circle at 20% 50%, white 1px, transparent 1px),
+                      radial-gradient(circle at 80% 50%, white 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+// Trust bar
+.trust-bar {
+  @apply bg-brand-navy py-4;
+
+  &__item {
+    @apply flex items-center gap-2 text-white/80 text-sm font-semibold;
+  }
+
+  &__dot {
+    @apply w-1.5 h-1.5 rounded-full bg-brand-sky flex-shrink-0;
+  }
+}
+
+// Feature grid
+.features-grid {
+  @apply grid gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+// Gallery grid
+.gallery-grid {
+  @apply grid gap-3;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Two col layout
+.split-layout {
+  @apply grid gap-12 lg:gap-20 items-center;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--reversed {
+    @media (min-width: 1024px) {
+      direction: rtl;
+      > * { direction: ltr; }
+    }
+  }
+}
