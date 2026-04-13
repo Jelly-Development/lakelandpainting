@@ -1,28 +1,19 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { useEffect, Suspense, lazy } from 'react';
+import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-
-const HomePage        = lazy(() => import('./pages/HomePage'));
-const ServicesPage    = lazy(() => import('./pages/ServicesPage'));
-const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage'));
-const GalleryPage     = lazy(() => import('./pages/GalleryPage'));
-const ContactPage     = lazy(() => import('./pages/ContactPage'));
-const FontDemoPage    = lazy(() => import('./pages/FontDemoPage'));
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import ServiceAreaPage from './pages/ServiceAreaPage';
+import GalleryPage from './pages/GalleryPage';
+import ContactPage from './pages/ContactPage';
+import FontDemoPage from './pages/FontDemoPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
   return null;
-}
-
-function PageLoader() {
-  return (
-    <div className="flex items-center justify-center py-40">
-      <div className="w-10 h-10 border-4 border-brand-light border-t-brand-blue rounded-full animate-spin" />
-    </div>
-  );
 }
 
 function NotFound() {
@@ -42,17 +33,15 @@ function Layout() {
       <ScrollToTop />
       <Navbar />
       <main id="main-content">
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/"                    element={<HomePage />} />
-            <Route path="/services/:service"   element={<ServicesPage />} />
-            <Route path="/:area" element={<ServiceAreaPage />} />
-            <Route path="/gallery"             element={<GalleryPage />} />
-            <Route path="/contact"             element={<ContactPage />} />
-            <Route path="/demo"               element={<FontDemoPage />} />
-            <Route path="*"                    element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/"                  element={<HomePage />} />
+          <Route path="/services/:service" element={<ServicesPage />} />
+          <Route path="/:area"             element={<ServiceAreaPage />} />
+          <Route path="/gallery"           element={<GalleryPage />} />
+          <Route path="/contact"           element={<ContactPage />} />
+          <Route path="/demo"              element={<FontDemoPage />} />
+          <Route path="*"                  element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
     </>
