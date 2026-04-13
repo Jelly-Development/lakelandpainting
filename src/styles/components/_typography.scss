@@ -71,10 +71,3 @@
   color: $white;
 }
 
-.divider {
-  @apply w-16 h-1 rounded-pill bg-brand-sky my-4;
-
-  &--center { @apply mx-auto; }
-  &--left   { @apply mr-auto; }
-  &--lg     { @apply w-24 h-1.5; }
-}

@@ -5,7 +5,7 @@ const EMAIL_HREF = 'mailto:joshcranor@gmail.com';
 
 export default function CtaBand({
   title   = 'Ready to Transform Your Property?',
-  subtitle= 'Get a free, no-obligation estimate. We serve all of Polk County and answer after hours.',
+  subtitle= 'Get a free, no-obligation estimate.',
 }) {
   const isMobile = useIsMobile();
   return (

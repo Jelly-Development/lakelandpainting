@@ -94,4 +94,11 @@
       box-shadow: $shadow-card;
     }
   }
+
+  &--static {
+    &:hover {
+      box-shadow: $shadow-card;
+      transform: none;
+    }
+  }
 }

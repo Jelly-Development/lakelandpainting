@@ -1,73 +1,84 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useIsMobile } from '../hooks/useIsMobile';
 import CtaBand from '../components/ui/CtaBand';
 
 const PHONE_HREF = 'tel:8636701601';
+
+const HERO_SUBTITLE = "Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Locally owned, licensed, and insured with over 15 years of experience.";
 
 const areaData = {
   lakeland: {
     name: 'Lakeland',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Lakeland, FL',
-    subtitle: "Over 15 years serving Lakeland homeowners and businesses. Licensed, insured, and obsessed with quality. We answer the phone — even after hours.",
     intro: "Lakeland Painting Company is proud to be headquartered right here in Lakeland, FL. We've been serving homeowners and business owners throughout the city for over 15 years — from the historic Dixieland neighborhood to the newer communities around Lakeland Highlands.",
     nearbyAreas: ['Kathleen', 'Bartow', 'Mulberry', 'Polk City'],
+    seoTitle: 'Painting Company in Lakeland, FL | Lakeland Painting Company',
+    seoDescription: 'Expert painting and paver sealing in Lakeland, FL. Over 15 years serving Polk County homeowners and businesses. Licensed & insured. Call 863-670-1601.',
   },
   kathleen: {
     name: 'Kathleen',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Kathleen, FL',
-    subtitle: "Serving Kathleen homeowners and new-construction communities for over 15 years. Licensed, insured, and committed to quality you can see.",
     intro: "Kathleen is a growing unincorporated community just north of Lakeland along US-98. We serve many families and new-construction homes throughout the Kathleen area, providing the same professional exterior and interior painting services our Lakeland customers enjoy.",
     nearbyAreas: ['Lakeland', 'Plant City', 'Polk City'],
+    seoTitle: 'Painting Company in Kathleen, FL | Lakeland Painting Company',
+    seoDescription: 'Professional painting and paver sealing in Kathleen, FL. Serving new-construction and established homes along US-98. Licensed & insured. Free estimates.',
   },
   bartow: {
     name: 'Bartow',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Bartow, FL',
-    subtitle: "Polk County's county seat deserves Polk County's best painters. 15+ years of experience with historic homes, modern builds, and commercial properties.",
     intro: "Bartow is the county seat of Polk County and home to some of the region's most beautiful historic homes. Our team has extensive experience painting older homes with wood siding, intricate trim work, and masonry foundations that require extra care and premium primers.",
     nearbyAreas: ['Lakeland', 'Mulberry', 'Lake Wales', 'Winter Haven'],
+    seoTitle: 'Painting Company in Bartow, FL | Lakeland Painting Company',
+    seoDescription: 'Expert house painting in Bartow, FL. Specializing in historic homes, wood siding, and masonry. Polk County\'s trusted painting contractor. Free estimates.',
   },
   'winter-haven': {
     name: 'Winter Haven',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Winter Haven, FL',
-    subtitle: "Chain of Lakes homes need paint that handles humidity and moisture. We use mold-resistant coatings built for Florida lakeside living.",
     intro: "Winter Haven is known as the Chain of Lakes City, with beautiful lakefront homes that need durable exterior coatings. We use mold-resistant, moisture-barrier paints specifically suited for lakeside properties.",
     nearbyAreas: ['Bartow', 'Lake Wales', 'Lakeland'],
+    seoTitle: 'Painting Company in Winter Haven, FL | Lakeland Painting Company',
+    seoDescription: 'Professional painting and paver sealing in Winter Haven, FL. Mold-resistant coatings for Chain of Lakes homes. Licensed & insured. Call for a free estimate.',
   },
   'plant-city': {
     name: 'Plant City',
     county: 'Hillsborough County',
     headline: 'Expert Painting & Paver Sealing in Plant City, FL',
-    subtitle: "Reliable, high-quality painting for Plant City homeowners and businesses — without the drive to Tampa. 15+ years of experience, locally operated.",
     intro: "Plant City, home of the Florida Strawberry Festival, is just east of Tampa on I-4. We serve Plant City homeowners and businesses looking for reliable, high-quality painting services without having to bring in a contractor from Tampa.",
     nearbyAreas: ['Lakeland', 'Kathleen', 'Brandon'],
+    seoTitle: 'Painting Company in Plant City, FL | Lakeland Painting Company',
+    seoDescription: 'Expert painting and paver sealing in Plant City, FL. Serving Hillsborough County homeowners and businesses. Licensed & insured. Free estimates — call today.',
   },
   mulberry: {
     name: 'Mulberry',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Mulberry, FL',
-    subtitle: "Trusted local painters serving Mulberry's tight-knit community. No big impersonal crews — just quality work from a company that knows your neighborhood.",
     intro: "Mulberry is a small community south of Lakeland with a tight-knit residential base. Our team regularly serves Mulberry homeowners looking for trusted, local painting professionals — not a large impersonal company from out of county.",
     nearbyAreas: ['Bartow', 'Lakeland', 'Lake Wales'],
+    seoTitle: 'Painting Company in Mulberry, FL | Lakeland Painting Company',
+    seoDescription: 'Trusted painting and paver sealing in Mulberry, FL. Local Polk County painters serving residential homes with premium paints and expert prep. Free estimates.',
   },
   'lake-wales': {
     name: 'Lake Wales',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Lake Wales, FL',
-    subtitle: "From historic homes near Bok Tower to newer Eagle Ridge developments — we bring the same quality process and premium products to every Lake Wales project.",
     intro: "Lake Wales sits at the southern end of Polk County near Bok Tower Gardens. The area has a wonderful mix of historic homes and newer developments. Our painting team brings the same quality process and premium products to every Lake Wales project, large or small.",
     nearbyAreas: ['Bartow', 'Winter Haven', 'Mulberry'],
+    seoTitle: 'Painting Company in Lake Wales, FL | Lakeland Painting Company',
+    seoDescription: 'Professional painting and paver sealing in Lake Wales, FL. Serving historic and new-construction homes near Bok Tower Gardens. Licensed & insured. Free estimates.',
   },
   'polk-city': {
     name: 'Polk City',
     county: 'Polk County',
     headline: 'Expert Painting & Paver Sealing in Polk City, FL',
-    subtitle: "Polk City's growing community deserves a reliable local painter. We serve new and existing homeowners along US-17 with the same quality we're known for in Lakeland.",
     intro: "Polk City is a small, growing community north of Lakeland along US-17. With increasing residential development in the area, we're proud to serve new and existing homeowners who want a reliable local painter they can count on.",
     nearbyAreas: ['Lakeland', 'Kathleen', 'Plant City'],
+    seoTitle: 'Painting Company in Polk City, FL | Lakeland Painting Company',
+    seoDescription: 'Expert painting and paver sealing in Polk City, FL. Serving new and existing homeowners along US-17. Locally owned, licensed & insured. Free estimates.',
   },
 };
 
@@ -132,6 +143,14 @@ export default function ServiceAreaPage() {
 
   return (
     <>
+      <Helmet>
+        <title>{data.seoTitle}</title>
+        <meta name="description" content={data.seoDescription} />
+        <link rel="canonical" href={`https://www.lakelandpainting.com/${area}`} />
+        <meta property="og:title" content={data.seoTitle} />
+        <meta property="og:description" content={data.seoDescription} />
+        <meta property="og:url" content={`https://www.lakelandpainting.com/${area}`} />
+      </Helmet>
       {/* HERO */}
       <section className="hero" aria-label="Hero">
         <div
@@ -147,10 +166,10 @@ export default function ServiceAreaPage() {
           }}
           aria-hidden="true"
         />
-        <div className="hero__content container-site w-full py-36 lg:pt-48 lg:pb-28">
+        <div className="hero__content container-site w-full pt-36 pb-28 lg:pt-48 lg:pb-28">
           <div className="max-w-3xl fade-up">
             <h1 className="hero-title mb-6 text-balance">{data.headline}</h1>
-            <p className="hero-subtitle mb-10 max-w-xl">{data.subtitle}</p>
+            <p className="hero-subtitle mb-10 max-w-xl">{HERO_SUBTITLE}</p>
             <div className="flex flex-wrap gap-4 items-center">
               <a
                 href={isMobile ? PHONE_HREF : 'mailto:joshcranor@gmail.com'}
@@ -204,9 +223,7 @@ export default function ServiceAreaPage() {
             <h2 className="section-title section-title--center">
               Painting &amp; Sealing Services<br />
               <span className="text-brand-blue">in {data.name}, FL</span>
-            </h2>
-            <div className="divider divider--center divider--lg mt-4" />
-          </div>
+            </h2>          </div>
           <div className="features-grid">
             {services.map((svc) => (
               <Link key={svc.title} to={svc.to} className="card card--service group block">
@@ -231,16 +248,14 @@ export default function ServiceAreaPage() {
               <p className="section-label">Why Lakeland Painting in {data.name}?</p>
               <h2 className="section-title mb-4">
                 More Than a Paint Job —<br />A Promise of Quality
-              </h2>
-              <div className="divider divider--left divider--lg mb-6" />
-              <p className="text-brand-gray text-xl leading-relaxed mb-8">{data.intro}</p>
+              </h2>              <p className="text-brand-gray text-xl leading-relaxed mb-8">{data.intro}</p>
               <ul className="space-y-4 mb-8">
                 {[
                   'Premium Sherwin-Williams and Benjamin Moore paints only',
                   'Thorough prep work — caulking, patching, and priming',
                   'Detailed protection of all surfaces not being painted',
                   'Full cleanup and final inspection before payment',
-                  'After-hours availability — we answer when you call',
+                  'Responsive communication throughout your project',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-3 text-brand-gray">
                     <CheckIcon /> <span>{item}</span>
@@ -285,9 +300,7 @@ export default function ServiceAreaPage() {
         <div className="container-site">
           <div className="text-center mb-12">
             <p className="section-label justify-center text-brand-light">Customer Reviews</p>
-            <h2 className="section-title section-title--light section-title--center">What Our Clients Say</h2>
-            <div className="divider divider--center mt-4" />
-          </div>
+            <h2 className="section-title section-title--light section-title--center">What Our Clients Say</h2>          </div>
           <div className="grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
               <div key={t.name} className="card card--testimonial">

@@ -13,7 +13,7 @@ const hours = [
 
 function InfoCard({ icon, title, children }) {
   return (
-    <div className="card p-6 flex gap-4">
+    <div className="card card--static p-6 flex gap-4">
       <div className="w-10 h-10 rounded-md bg-brand-blue/10 flex items-center justify-center flex-shrink-0 text-brand-blue mt-1">
         {icon}
       </div>
@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="page-hero__pattern" aria-hidden="true" />
         <div className="container-site relative z-10">
           <nav className="text-white/50 text-sm mb-4">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/" className="text-white hover:text-white transition-colors">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-white">Contact</span>
           </nav>
@@ -53,9 +53,6 @@ export default function ContactPage() {
           <p className="hero-subtitle max-w-xl">
             We typically respond the same day. Or skip the form — just call us directly.
           </p>
-          <a href={PHONE_HREF} className="btn btn--white btn--lg mt-6 inline-flex">
-            📞 Call {PHONE}
-          </a>
         </div>
       </div>
 
@@ -70,9 +67,7 @@ export default function ContactPage() {
                 <p className="section-label">Contact Information</p>
                 <h2 className="section-title mb-2" style={{ fontSize: 'clamp(1.4rem,3vw,2rem)' }}>
                   Let's Talk About Your Project
-                </h2>
-                <div className="divider divider--left mb-4" />
-              </div>
+                </h2>              </div>
 
               <InfoCard
                 icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.4 15.4 0 006.6 6.6l2.2-2.2c.28-.28.67-.36 1.02-.25 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.85 21 3 13.15 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.47.57 3.58.1.35.01.74-.25 1.02L6.6 10.8z"/></svg>}
@@ -81,7 +76,6 @@ export default function ContactPage() {
                 <a href={PHONE_HREF} className="text-brand-blue font-bold text-xl hover:text-brand-navy transition-colors">
                   {PHONE}
                 </a>
-                <p className="text-brand-gray text-sm mt-1">We answer after hours for your convenience.</p>
               </InfoCard>
 
               <InfoCard
@@ -105,26 +99,13 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </dl>
-                <p className="text-brand-gray text-xs mt-3">
-                  After-hours calls accepted — we'll call you back first thing.
-                </p>
               </InfoCard>
 
-              <InfoCard
-                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>}
-                title="Service Area"
-              >
-                <p className="text-brand-dark font-semibold">Polk County &amp; surrounding areas</p>
-                <p className="text-brand-gray text-sm mt-1">
-                  Lakeland · Kathleen · Bartow · Winter Haven ·
-                  Plant City · Mulberry · Lake Wales · Polk City
-                </p>
-              </InfoCard>
             </div>
 
             {/* Form Column */}
             <div className="lg:col-span-3">
-              <div className="card p-8 lg:p-10">
+              <div className="card card--static p-8 lg:p-10">
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mx-auto mb-4">

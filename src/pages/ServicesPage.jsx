@@ -82,7 +82,7 @@ const serviceData = {
         title: 'Interior Commercial Painting',
         body: "We understand that downtime costs your business money. Our team works efficiently and can schedule around your operating hours — whether that means painting at night, on weekends, or in phases to keep your space functional. From open-plan offices to retail stores and healthcare facilities, we deliver clean, professional interiors.",
         bullets: [
-          'After-hours and weekend scheduling available',
+          'Flexible scheduling around your business operations',
           'Offices, retail, medical, and industrial spaces',
           'Low-odor and zero-VOC paint options',
           'Phased painting to minimize disruption',
@@ -181,9 +181,7 @@ export default function ServicesPage() {
               {/* Text */}
               <div>
                 <p className="section-label">{svc.tag}</p>
-                <h2 className="section-title mb-4">{svc.title}</h2>
-                <div className="divider divider--left mb-6" />
-                <p className="text-brand-gray text-lg leading-relaxed mb-6">{svc.body}</p>
+                <h2 className="section-title mb-4">{svc.title}</h2>                <p className="text-brand-gray text-lg leading-relaxed mb-6">{svc.body}</p>
                 <ul className="space-y-3 mb-8">
                   {svc.bullets.map(b => (
                     <li key={b} className="flex items-start gap-3 text-brand-dark">
@@ -230,9 +228,7 @@ export default function ServicesPage() {
             <p className="section-label justify-center text-brand-light">Our Process</p>
             <h2 className="section-title section-title--light section-title--center">
               How It Works
-            </h2>
-            <div className="divider divider--center mt-4" />
-          </div>
+            </h2>          </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {data.process.map(({ step, title, text }) => (
               <div key={step} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
@@ -257,6 +253,7 @@ export default function ServicesPage() {
                   key={s.slug}
                   to={`/services/${s.slug}`}
                   className="card card--flat p-6 text-center hover:border-brand-blue group"
+                  style={{ borderRadius: '12px' }}
                 >
                   <div className="font-display font-bold text-brand-navy text-lg mb-2 group-hover:text-brand-blue transition-colors">
                     {s.label}
@@ -270,7 +267,7 @@ export default function ServicesPage() {
 
       <CtaBand
         title={`Ready to Get Started with ${data.label}?`}
-        subtitle="Call us today for a free, no-obligation estimate. We serve all of Polk County and answer after hours."
+        subtitle="Call us today for a free, no-obligation estimate. We serve all of Polk County."
       />
     </>
   );

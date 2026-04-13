@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CtaBand from '../components/ui/CtaBand';
+import { useIsMobile } from '../hooks/useIsMobile';
+
 
 const PHONE_HREF = 'tel:8636701601';
-const PHONE = '863-670-1601';
+const EMAIL_HREF = 'mailto:joshcranor@gmail.com';
 
 // Gallery items with color-coded placeholder swatches
 const galleryItems = [
@@ -28,6 +29,7 @@ const galleryItems = [
 const FILTERS = ['All', 'Exterior Residential', 'Interior Residential', 'Commercial', 'Paver Sealing'];
 
 export default function GalleryPage() {
+  const isMobile = useIsMobile();
   const [active, setActive] = useState('All');
   const [lightbox, setLightbox] = useState(null);
 
@@ -40,7 +42,7 @@ export default function GalleryPage() {
         <div className="page-hero__pattern" aria-hidden="true" />
         <div className="container-site relative z-10">
           <nav className="text-white/50 text-sm mb-4">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/" className="text-white hover:text-white transition-colors">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-white">Gallery</span>
           </nav>
@@ -122,10 +124,10 @@ export default function GalleryPage() {
           <div className="mt-16 text-center bg-brand-cream rounded-xl p-10">
             <h2 className="section-title mb-3">Like What You See?</h2>
             <p className="section-subtitle section-subtitle--center mb-6">
-              Let's discuss your project. Call for a free estimate — we serve all of Polk County.
+              Let's discuss your project. Get a free estimate — we serve all of Polk County.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={PHONE_HREF} className="btn btn--primary btn--lg">📞 Call {PHONE}</a>
+              <a href={isMobile ? PHONE_HREF : EMAIL_HREF} className="btn btn--primary btn--lg">Get a Quote</a>
             </div>
           </div>
         </div>
@@ -167,7 +169,6 @@ export default function GalleryPage() {
         </div>
       )}
 
-      <CtaBand />
     </>
   );
 }

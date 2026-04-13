@@ -1,8 +1,7 @@
-import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useIsMobile } from "../hooks/useIsMobile";
 import CtaBand from "../components/ui/CtaBand";
-import LazyImage from "../components/ui/LazyImage";
 
 const PHONE_HREF = "tel:8636701601";
 
@@ -56,9 +55,6 @@ function DropIcon() {
       <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
     </svg>
   );
-}
-function StarIcon() {
-  return <span className="text-amber-400">★</span>;
 }
 function CheckIcon() {
   return (
@@ -128,7 +124,14 @@ export default function HomePage() {
   const isMobile = useIsMobile();
   return (
     <>
-      {/* SEO meta — in a real app use react-helmet */}
+      <Helmet>
+        <title>Lakeland Painting Company | Expert Painting &amp; Paver Sealing in Lakeland, FL</title>
+        <meta name="description" content="Over 15 years serving Lakeland homeowners and businesses. Professional painting and paver sealing across Polk County. Licensed &amp; insured. Call 863-670-1601 for a free estimate." />
+        <link rel="canonical" href="https://www.lakelandpainting.com/" />
+        <meta property="og:title" content="Lakeland Painting Company | Lakeland, FL" />
+        <meta property="og:description" content="Expert painting and paver sealing in Lakeland, FL. 15+ years experience. Licensed &amp; insured." />
+        <meta property="og:url" content="https://www.lakelandpainting.com/" />
+      </Helmet>
       {/* HERO */}
       <section className="hero" aria-label="Hero">
         {/* Background image (placeholder geometric) */}
@@ -151,7 +154,7 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        <div className="hero__content container-site w-full py-36 lg:pt-48 lg:pb-28">
+        <div className="hero__content container-site w-full pt-36 pb-28 lg:pt-48 lg:pb-28">
           <div className="max-w-3xl fade-up">
             <h1 className="hero-title mb-6 text-balance">
               Expert Painting &amp;
@@ -161,9 +164,7 @@ export default function HomePage() {
               <span className="text-brand-sky">Lakeland, FL</span>
             </h1>
             <p className="hero-subtitle mb-10 max-w-xl">
-              Over 15 years serving Central Florida homeowners and businesses.
-              Licensed, insured, and obsessed with quality. We answer the phone
-              — even after hours.
+              Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Locally owned, licensed, and insured with over 15 years of experience.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <a
@@ -224,9 +225,7 @@ export default function HomePage() {
               Painting &amp; Sealing Services
               <br />
               <span className="text-brand-blue">for Every Property</span>
-            </h2>
-            <div className="divider divider--center divider--lg mt-4" />
-          </div>
+            </h2>          </div>
           <div className="features-grid">
             {services.map((svc) => (
               <Link
@@ -259,9 +258,7 @@ export default function HomePage() {
               <p className="section-label">Why Lakeland Painting?</p>
               <h2 className="section-title mb-4">
                 More Than a Paint Job —<br />A Promise of Quality
-              </h2>
-              <div className="divider divider--left divider--lg mb-6" />
-              <p className="text-brand-gray text-xl leading-relaxed mb-8">
+              </h2>              <p className="text-brand-gray text-xl leading-relaxed mb-8">
                 We're a small, owner-operated company — which means Josh
                 personally oversees every project from estimate to final
                 walkthrough. No subcontractors cutting corners.
@@ -272,7 +269,7 @@ export default function HomePage() {
                   "Thorough prep work — caulking, patching, and priming",
                   "Detailed protection of all surfaces not being painted",
                   "Full cleanup and final inspection before payment",
-                  "After-hours availability — we answer when you call",
+                  "Responsive communication throughout your project",
                 ].map((item) => (
                   <li
                     key={item}
@@ -350,9 +347,7 @@ export default function HomePage() {
             <p className="section-label justify-center text-brand-light">Customer Reviews</p>
             <h2 className="section-title section-title--light section-title--center">
               What Our Clients Say
-            </h2>
-            <div className="divider divider--center mt-4" />
-          </div>
+            </h2>          </div>
           <div className="grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
               <div key={t.name} className="card card--testimonial">
