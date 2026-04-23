@@ -6,8 +6,8 @@ const PHONE_HREF = 'tel:8636701601';
 const EMAIL = 'joshcranor@gmail.com';
 
 const hours = [
-  { day: 'Monday – Friday', time: '7:00 AM – 6:00 PM' },
-  { day: 'Saturday',         time: '8:00 AM – 4:00 PM' },
+  { day: 'Monday – Friday', time: '9:00 AM – 5:00 PM' },
+  { day: 'Saturday',         time: 'Closed' },
   { day: 'Sunday',           time: 'Closed' },
 ];
 

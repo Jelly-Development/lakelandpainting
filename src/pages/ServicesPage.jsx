@@ -26,11 +26,11 @@ const serviceData = {
       {
         tag: 'Bread & Butter',
         title: 'Exterior Residential Painting',
-        body: "Florida's intense sun, humidity, and afternoon storms punish exterior paint faster than almost anywhere in the country. Our exterior process starts with thorough power washing, surface repair, caulking of all gaps and cracks, and priming of bare wood and masonry before a single drop of finish coat is applied. We use Sherwin-Williams Duration, Emerald, or SuperPaint lines — all formulated to resist mold, fade, and moisture in Central Florida's climate. The result is a finish that looks great for years, not months.",
+        body: "Florida's intense sun, humidity, and afternoon storms punish exterior paint faster than almost anywhere in the country. Our exterior process starts with thorough power washing, surface repair, caulking of all gaps and cracks, and priming of bare wood and masonry before a single drop of finish coat is applied. We use premium paints formulated to resist mold, fade, and moisture in Central Florida's climate. The result is a finish that looks great for years, not months.",
         bullets: [
           'Power washing and complete surface prep',
           'Caulking, patching, and priming',
-          'Sherwin-Williams premium exterior paints',
+          'Premium exterior paints for Florida's climate',
           'Fascia, soffits, doors, and trim included',
           'Mold-resistant formulas for Florida climate',
         ],

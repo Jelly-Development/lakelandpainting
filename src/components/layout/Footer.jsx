@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="lg:col-span-1 flex flex-col items-center md:items-start">
           <img src="/logo.webp" alt="Lakeland Painting Company" className="h-20 mb-4" loading="lazy" />
           <p className="text-white text-base leading-relaxed">
-            Over 15 years of expert painting and paver sealing across Polk County. Locally owned, professionally delivered.
+            Over 15 years of expert painting and paver sealing across Polk County. Licensed, insured, and professionally delivered.
           </p>
         </div>
 

@@ -5,7 +5,7 @@ import CtaBand from '../components/ui/CtaBand';
 
 const PHONE_HREF = 'tel:8636701601';
 
-const HERO_SUBTITLE = "Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Locally owned, licensed, and insured with over 15 years of experience.";
+const HERO_SUBTITLE = "Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Licensed and insured with over 15 years of experience.";
 
 const areaData = {
   lakeland: {
@@ -78,7 +78,7 @@ const areaData = {
     intro: "Polk City is a small, growing community north of Lakeland along US-17. With increasing residential development in the area, we're proud to serve new and existing homeowners who want a reliable local painter they can count on.",
     nearbyAreas: ['Lakeland', 'Kathleen', 'Plant City'],
     seoTitle: 'Painting Company in Polk City, FL | Lakeland Painting Company',
-    seoDescription: 'Expert painting and paver sealing in Polk City, FL. Serving new and existing homeowners along US-17. Locally owned, licensed & insured. Free estimates.',
+    seoDescription: 'Expert painting and paver sealing in Polk City, FL. Serving new and existing homeowners along US-17. Licensed & insured. Free estimates.',
   },
 };
 
@@ -104,7 +104,7 @@ const testimonials = [
   {
     name: 'Jedidiah F.',
     stars: 5,
-    text: 'Josh uses high quality paint, pays attention to detail, and gets the work done quickly and efficiently. His work is long lasting and done the right way. He shows up when he says he will.',
+    text: 'High quality paint, great attention to detail, and the work gets done quickly and efficiently. The work is long lasting and done the right way. They show up when they say they will.',
   },
   {
     name: 'Jared S.',
@@ -188,9 +188,9 @@ export default function ServiceAreaPage() {
           <div className="flex flex-wrap justify-center md:justify-between gap-4 py-1">
             {[
               `Serving ${data.name} Since 2009`,
-              'Locally Owned & Operated',
+              'Licensed & Insured',
               'Free Estimates Within 24 Hours',
-              'Premium Sherwin-Williams Paints',
+              'Premium Quality Paints',
             ].map((t, i) => (
               <span key={i} className="trust-bar__item">
                 <span className="trust-bar__dot" />
@@ -251,7 +251,7 @@ export default function ServiceAreaPage() {
               </h2>              <p className="text-brand-gray text-xl leading-relaxed mb-8">{data.intro}</p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Premium Sherwin-Williams and Benjamin Moore paints only',
+                  'Premium quality paints on every job',
                   'Thorough prep work — caulking, patching, and priming',
                   'Detailed protection of all surfaces not being painted',
                   'Full cleanup and final inspection before payment',

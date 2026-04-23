@@ -99,7 +99,7 @@ const testimonials = [
   {
     name: "Jedidiah F.",
     stars: 5,
-    text: "Josh uses high quality paint, pays attention to detail, and gets the work done quickly and efficiently. His work is long lasting and done the right way. He shows up when he says he will.",
+    text: "High quality paint, great attention to detail, and the work gets done quickly and efficiently. The work is long lasting and done the right way. They show up when they say they will.",
   },
   {
     name: "Jared S.",
@@ -164,7 +164,7 @@ export default function HomePage() {
               <span className="text-brand-sky">Lakeland, FL</span>
             </h1>
             <p className="hero-subtitle mb-10 max-w-xl">
-              Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Locally owned, licensed, and insured with over 15 years of experience.
+              Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Licensed and insured with over 15 years of experience.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <a
@@ -185,9 +185,9 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center md:justify-between gap-4 py-1">
             {[
               "Serving Polk County Since 2009",
-              "Locally Owned & Operated",
+              "Licensed & Insured",
               "Free Estimates Within 24 Hours",
-              "Premium Sherwin-Williams Paints",
+              "Premium Quality Paints",
             ].map((t, i) => (
               <span key={i} className="trust-bar__item">
                 <span className="trust-bar__dot" />
@@ -259,13 +259,12 @@ export default function HomePage() {
               <h2 className="section-title mb-4">
                 More Than a Paint Job —<br />A Promise of Quality
               </h2>              <p className="text-brand-gray text-xl leading-relaxed mb-8">
-                We're a small, owner-operated company — which means Josh
-                personally oversees every project from estimate to final
+                Every project is personally overseen from estimate to final
                 walkthrough. No subcontractors cutting corners.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "Premium Sherwin-Williams and Benjamin Moore paints only",
+                  "Premium quality paints on every job",
                   "Thorough prep work — caulking, patching, and priming",
                   "Detailed protection of all surfaces not being painted",
                   "Full cleanup and final inspection before payment",
