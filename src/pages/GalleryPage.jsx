@@ -2,28 +2,54 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useIsMobile';
 
+import ext1 from '../assets/exterior/IMG_1659.jpeg';
+import ext2 from '../assets/exterior/IMG_1660.jpeg';
+import ext3 from '../assets/exterior/IMG_1661.jpeg';
+import ext4 from '../assets/exterior/IMG_1662.jpeg';
+import ext5 from '../assets/exterior/IMG_1664.jpeg';
+
+import int1 from '../assets/interior/IMG_1666.jpeg';
+import int2 from '../assets/interior/IMG_1676.jpeg';
+
+import seal1 from '../assets/sealing/IMG_1667.jpeg';
+import seal2 from '../assets/sealing/IMG_1668.jpeg';
+import seal3 from '../assets/sealing/IMG_1669.jpeg';
+import seal4 from '../assets/sealing/IMG_1672.jpeg';
+import seal5 from '../assets/sealing/IMG_1677.jpeg';
+
+import com1 from '../assets/commercial/IMG_1663.jpeg';
+import com2 from '../assets/commercial/IMG_1670.jpeg';
+import com3 from '../assets/commercial/IMG_1671.jpeg';
+import com4 from '../assets/commercial/IMG_1673.jpeg';
+import com5 from '../assets/commercial/IMG_1674.jpeg';
+import com6 from '../assets/commercial/IMG_1675.jpeg';
+import com7 from '../assets/commercial/IMG_1678.jpeg';
+import com8 from '../assets/commercial/IMG_1679.jpeg';
 
 const PHONE_HREF = 'tel:8636701601';
 const EMAIL_HREF = 'mailto:joshcranor@gmail.com';
 
-// Gallery items with color-coded placeholder swatches
 const galleryItems = [
-  { id: 1,  category: 'Exterior Residential', color: '#2A5F8F', label: 'Exterior — Lakeland Home' },
-  { id: 2,  category: 'Exterior Residential', color: '#1B3A5C', label: 'Exterior — Two-Story Renovation' },
-  { id: 3,  category: 'Interior Residential', color: '#5A9AC9', label: 'Interior — Living Room' },
-  { id: 4,  category: 'Exterior Residential', color: '#3378B0', label: 'Exterior — Stucco Home' },
-  { id: 5,  category: 'Interior Residential', color: '#A8CCDF', label: 'Interior — Master Bedroom' },
-  { id: 6,  category: 'Commercial',           color: '#2A5F8F', label: 'Commercial — Office Exterior' },
-  { id: 7,  category: 'Paver Sealing',        color: '#6B7280', label: 'Paver Sealing — Driveway' },
-  { id: 8,  category: 'Exterior Residential', color: '#1B3A5C', label: 'Exterior — Ranch Home' },
-  { id: 9,  category: 'Interior Residential', color: '#3378B0', label: 'Interior — Kitchen' },
-  { id: 10, category: 'Paver Sealing',        color: '#888880', label: 'Paver Sealing — Pool Deck' },
-  { id: 11, category: 'Commercial',           color: '#2A5F8F', label: 'Commercial — Storefront' },
-  { id: 12, category: 'Exterior Residential', color: '#5A9AC9', label: 'Exterior — Trim Detail' },
-  { id: 13, category: 'Interior Residential', color: '#A8CCDF', label: 'Interior — Dining Room' },
-  { id: 14, category: 'Paver Sealing',        color: '#6B7280', label: 'Paver Sealing — Patio' },
-  { id: 15, category: 'Exterior Residential', color: '#3378B0', label: 'Exterior — Modern Home' },
-  { id: 16, category: 'Commercial',           color: '#1B3A5C', label: 'Commercial — Warehouse' },
+  { id: 1,  category: 'Exterior Residential', image: ext1,  label: 'Exterior — Lakeland Home' },
+  { id: 2,  category: 'Exterior Residential', image: ext2,  label: 'Exterior — Two-Story Renovation' },
+  { id: 3,  category: 'Interior Residential', image: int1,  label: 'Interior — Living Room' },
+  { id: 4,  category: 'Exterior Residential', image: ext3,  label: 'Exterior — Stucco Home' },
+  { id: 5,  category: 'Interior Residential', image: int2,  label: 'Interior — Master Bedroom' },
+  { id: 6,  category: 'Commercial',           image: com1,  label: 'Commercial — Office Exterior' },
+  { id: 7,  category: 'Paver Sealing',        image: seal1, label: 'Paver Sealing — Driveway' },
+  { id: 8,  category: 'Exterior Residential', image: ext4,  label: 'Exterior — Ranch Home' },
+  { id: 9,  category: 'Paver Sealing',        image: seal2, label: 'Paver Sealing — Pool Deck' },
+  { id: 10, category: 'Commercial',           image: com2,  label: 'Commercial — Storefront' },
+  { id: 11, category: 'Paver Sealing',        image: seal3, label: 'Paver Sealing — Patio' },
+  { id: 12, category: 'Exterior Residential', image: ext5,  label: 'Exterior — Trim Detail' },
+  { id: 13, category: 'Commercial',           image: com3,  label: 'Commercial — Warehouse' },
+  { id: 14, category: 'Paver Sealing',        image: seal4, label: 'Paver Sealing — Walkway' },
+  { id: 15, category: 'Commercial',           image: com4,  label: 'Commercial — Building Exterior' },
+  { id: 16, category: 'Paver Sealing',        image: seal5, label: 'Paver Sealing — Driveway Refresh' },
+  { id: 17, category: 'Commercial',           image: com5,  label: 'Commercial — Property Repaint' },
+  { id: 18, category: 'Commercial',           image: com6,  label: 'Commercial — Retail Exterior' },
+  { id: 19, category: 'Commercial',           image: com7,  label: 'Commercial — Multi-Unit' },
+  { id: 20, category: 'Commercial',           image: com8,  label: 'Commercial — HOA Exterior' },
 ];
 
 const FILTERS = ['All', 'Exterior Residential', 'Interior Residential', 'Commercial', 'Paver Sealing'];
@@ -83,24 +109,19 @@ export default function GalleryPage() {
             {filtered.map((item) => (
               <button
                 key={item.id}
-                className="group relative rounded-lg overflow-hidden cursor-pointer text-left w-full"
+                className="group relative overflow-hidden cursor-pointer text-left w-full"
+                style={{ borderRadius: '2px' }}
                 style={{ aspectRatio: '4/3' }}
                 onClick={() => setLightbox(item)}
                 aria-label={`View ${item.label}`}
               >
-                {/* Color placeholder */}
-                <div
-                  className="absolute inset-0 transition-transform duration-300 group-hover:scale-105"
-                  style={{ background: `linear-gradient(135deg, ${item.color}cc 0%, ${item.color} 100%)` }}
-                >
-                  <div className="h-full flex flex-col items-center justify-center gap-3 text-white/40">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                      <rect x="6" y="12" width="36" height="28" rx="3" fill="rgba(255,255,255,0.15)" />
-                      <path d="M12 34 L22 23 L28 29 L34 21 L42 34Z" fill="rgba(255,255,255,0.2)" />
-                      <circle cx="33" cy="17" r="5" fill="rgba(255,255,255,0.25)" />
-                    </svg>
-                  </div>
-                </div>
+                {/* Photo */}
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 px-4">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -133,7 +154,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Simple lightbox */}
+      {/* Lightbox */}
       {lightbox && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
@@ -146,17 +167,14 @@ export default function GalleryPage() {
             onClick={e => e.stopPropagation()}
             style={{ aspectRatio: '4/3' }}
           >
-            <div
-              className="w-full h-full flex flex-col items-center justify-center gap-4"
-              style={{ background: `linear-gradient(135deg, ${lightbox.color}cc 0%, ${lightbox.color} 100%)` }}
-            >
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                <rect x="10" y="20" width="60" height="45" rx="4" fill="rgba(255,255,255,0.15)" />
-                <path d="M20 55 L36 38 L46 48 L56 36 L68 55Z" fill="rgba(255,255,255,0.2)" />
-                <circle cx="54" cy="30" r="8" fill="rgba(255,255,255,0.25)" />
-              </svg>
+            <img
+              src={lightbox.image}
+              alt={lightbox.label}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-6 py-4">
               <p className="text-white font-bold text-lg">{lightbox.label}</p>
-              <p className="text-white/60 text-sm">{lightbox.category}</p>
+              <p className="text-white/70 text-sm">{lightbox.category}</p>
             </div>
           </div>
           <button

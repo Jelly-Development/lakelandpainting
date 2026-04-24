@@ -2,6 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import CtaBand from "../components/ui/CtaBand";
 import { useIsMobile } from "../hooks/useIsMobile";
 
+import extImg from "../assets/exterior/IMG_1659.jpeg";
+import intImg from "../assets/interior/IMG_1666.jpeg";
+import comExtImg from "../assets/commercial/IMG_1663.jpeg";
+import sealResImg from "../assets/sealing/IMG_1667.jpeg";
+
 const PHONE_HREF = "tel:8636701601";
 
 function CheckIcon() {
@@ -37,6 +42,7 @@ const serviceData = {
     services: [
       {
         tag: "Bread & Butter",
+        image: extImg,
         title: "Exterior Residential Painting",
         body: "Florida's intense sun, humidity, and afternoon storms punish exterior paint faster than almost anywhere in the country. Our exterior process starts with thorough power washing, surface repair, caulking of all gaps and cracks, and priming of bare wood and masonry before a single drop of finish coat is applied. We use premium paints formulated to resist mold, fade, and moisture in Central Florida's climate. The result is a finish that looks great for years, not months.",
         bullets: [
@@ -49,6 +55,7 @@ const serviceData = {
       },
       {
         tag: "Interior",
+        image: intImg,
         title: "Interior Residential Painting",
         body: "A fresh coat of interior paint can completely transform the feel of your home. We take extra care to protect your furniture, floors, and fixtures with drop cloths and masking before our painters ever open a can. We cut crisp, clean lines at every ceiling, trim, and corner — no sloppy edges. We work efficiently and respect your home throughout the process, leaving it spotless at project close.",
         bullets: [
@@ -94,27 +101,16 @@ const serviceData = {
       "Need a commercial painter in Lakeland or Polk County? We handle offices, retail, warehouses, and HOAs. Call 863-670-1601 for a free commercial estimate.",
     services: [
       {
-        tag: "Exterior Commercial",
-        title: "Exterior Commercial Painting",
-        body: "A well-maintained exterior communicates professionalism and attracts customers. We work with property managers, business owners, and HOAs to repaint storefronts, office buildings, warehouses, and multi-unit properties. Our commercial exterior process includes all surface prep, masonry sealing, and application of durable commercial-grade coatings designed for heavy UV exposure.",
+        tag: "Commercial Painting",
+        image: comExtImg,
+        title: "Commercial Painting Services",
+        body: "A well-maintained property communicates professionalism and attracts customers. We work with property managers, business owners, and HOAs on everything from storefront exteriors to interior office spaces. Our team works efficiently and can schedule around your operating hours — evenings, weekends, or in phases — to minimize disruption. Commercial-grade coatings, clean job sites, and a detailed scope upfront every time.",
         bullets: [
-          "Storefront, office, and warehouse exteriors",
-          "HOA and multi-unit residential buildings",
-          "Commercial-grade coatings and masonry sealers",
+          "Storefronts, offices, warehouses, and multi-unit buildings",
+          "Interior and exterior commercial painting",
+          "HOA and property management partnerships",
           "Flexible scheduling — evenings and weekends available",
-          "Detailed scope and timeline provided upfront",
-        ],
-      },
-      {
-        tag: "Interior Commercial",
-        title: "Interior Commercial Painting",
-        body: "We understand that downtime costs your business money. Our team works efficiently and can schedule around your operating hours — whether that means painting at night, on weekends, or in phases to keep your space functional. From open-plan offices to retail stores and healthcare facilities, we deliver clean, professional interiors.",
-        bullets: [
-          "Flexible scheduling around your business operations",
-          "Offices, retail, medical, and industrial spaces",
           "Low-odor and zero-VOC paint options",
-          "Phased painting to minimize disruption",
-          "Clean job sites maintained throughout",
         ],
       },
     ],
@@ -152,27 +148,16 @@ const serviceData = {
       "Paver sealing in Lakeland, FL and Polk County. We seal driveways, pool decks, and patios with commercial-grade sealers. Call 863-670-1601 for a free estimate.",
     services: [
       {
-        tag: "Driveways & Patios",
-        title: "Residential Paver Sealing",
-        body: "Unsealed pavers absorb oil, moisture, and organic material — leading to stains, shifting, and weed growth. Our paver sealing process starts with a thorough power wash to remove all dirt, mold, and efflorescence. We then apply a professional-grade polymeric sand re-jointing where needed, and finish with a high-quality sealer that enhances the natural color of your pavers while creating a protective barrier against Florida's elements.",
+        tag: "Paver Sealing",
+        image: sealResImg,
+        title: "Professional Paver Sealing",
+        body: "Unsealed pavers absorb oil, moisture, and organic material — leading to stains, shifting, and weed growth. Our paver sealing process starts with a thorough power wash to remove all dirt, mold, and efflorescence. We then apply professional-grade polymeric sand re-jointing where needed, and finish with a high-quality sealer that enhances the natural color of your pavers while creating a protective barrier against Florida's elements. We handle everything from residential driveways to large HOA communities.",
         bullets: [
           "Driveways, patios, walkways, and pool decks",
           "Deep power washing and stain removal",
           "Polymeric sand re-jointing where needed",
           "Wet-look or natural-matte sealer options",
-          "Protects against UV fade, mold, and oil stains",
-        ],
-      },
-      {
-        tag: "Commercial",
-        title: "Commercial Paver Sealing",
-        body: "Commercial properties, HOAs, and apartment complexes benefit greatly from professional paver sealing. We handle large-scale projects with efficient equipment and professional-grade sealers rated for high-traffic surfaces. Regular sealing extends paver life significantly and keeps common areas looking sharp.",
-        bullets: [
-          "HOA communities and apartment complexes",
-          "Commercial parking and walkway pavers",
-          "High-traffic grade commercial sealers",
-          "Large-scale project capacity",
-          "Scheduled maintenance programs available",
+          "Residential, commercial, and HOA properties",
         ],
       },
     ],
@@ -270,46 +255,14 @@ export default function ServicesPage() {
                   Get Started
                 </a>
               </div>
-              {/* Visual placeholder */}
-              <div
-                className="rounded-xl overflow-hidden"
-                style={{
-                  aspectRatio: "4/3",
-                  background:
-                    idx % 2 === 0
-                      ? "linear-gradient(135deg, #A8CCDF 0%, #2A5F8F 100%)"
-                      : "linear-gradient(135deg, #3378B0 0%, #1B3A5C 100%)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-                aria-hidden="true"
-              >
-                <div className="text-white/30 text-center">
-                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                    <rect
-                      x="10"
-                      y="20"
-                      width="60"
-                      height="45"
-                      rx="4"
-                      fill="rgba(255,255,255,0.15)"
-                    />
-                    <path
-                      d="M20 55 L36 38 L46 48 L56 36 L68 55Z"
-                      fill="rgba(255,255,255,0.2)"
-                    />
-                    <circle
-                      cx="54"
-                      cy="30"
-                      r="8"
-                      fill="rgba(255,255,255,0.25)"
-                    />
-                  </svg>
-                  <p className="text-sm font-semibold uppercase tracking-widest mt-3 text-white/40">
-                    Photo Gallery
-                  </p>
-                </div>
+              {/* Service photo */}
+              <div className="rounded-xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                <img
+                  src={svc.image}
+                  alt={svc.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -352,7 +305,7 @@ export default function ServicesPage() {
           <h2 className="section-title section-title--center mb-10">
             Explore Our Other Services
           </h2>
-          <div className="grid gap-4 sm:grid-cols-3 max-w-3xl mx-auto">
+          <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
             {Object.values(serviceData)
               .filter((s) => s.slug !== data.slug)
               .map((s) => (
