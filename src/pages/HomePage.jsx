@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useIsMobile } from "../hooks/useIsMobile";
 import CtaBand from "../components/ui/CtaBand";
+import interiorImg from "../assets/interior/IMG_1666.jpeg";
+import heroImg from "../assets/exterior/IMG_1660.jpeg";
 
 const PHONE_HREF = "tel:8636701601";
 
@@ -155,26 +157,35 @@ export default function HomePage() {
         />
 
         <div className="hero__content container-site w-full pt-36 pb-28 lg:pt-48 lg:pb-28">
-          <div className="max-w-3xl fade-up">
-            <h1 className="hero-title mb-6 text-balance">
-              Expert Painting &amp;
-              <br />
-              Paver Sealing in
-              <br />
-              <span className="text-brand-sky">Lakeland, FL</span>
-            </h1>
-            <p className="hero-subtitle mb-10 max-w-xl">
-              Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Licensed and insured with over 15 years of experience.
-            </p>
-            <div className="flex flex-wrap gap-4 items-center">
-              <a
-                href={isMobile ? PHONE_HREF : 'mailto:joshcranor@gmail.com'}
-                className="btn btn--white btn--lg"
-              >
-                {isMobile ? 'Call for a Quote' : 'Get a Quote'}
-              </a>
+          <div className="flex items-center gap-12">
+            <div className="flex-1 fade-up">
+              <h1 className="hero-title mb-6 text-balance">
+                Expert Painting &amp;
+                <br />
+                Paver Sealing in
+                <br />
+                <span className="text-brand-sky">Lakeland, FL</span>
+              </h1>
+              <p className="hero-subtitle mb-10 max-w-xl">
+                Expert residential and commercial painting, interior and exterior work, and paver sealing across Polk County. Licensed and insured with over 15 years of experience.
+              </p>
+              <div className="flex flex-wrap gap-4 items-center">
+                <a
+                  href={isMobile ? PHONE_HREF : 'mailto:joshcranor@gmail.com'}
+                  className="btn btn--white btn--lg"
+                >
+                  {isMobile ? 'Call for a Quote' : 'Get a Quote'}
+                </a>
+              </div>
             </div>
-            {/* Trust signals */}
+            <div className="hidden lg:block flex-shrink-0 w-[45%]">
+              <img
+                src={heroImg}
+                alt="Exterior painting project by Lakeland Painting Company"
+                className="w-full rounded-xl object-cover shadow-float"
+                style={{ aspectRatio: '4/3' }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -286,42 +297,13 @@ export default function HomePage() {
               </a>
             </div>
             <div className="relative">
-              <div
-                className="rounded-xl overflow-hidden bg-brand-light"
-                style={{
-                  aspectRatio: "4/5",
-                  background:
-                    "linear-gradient(135deg, #A8CCDF 0%, #3378B0 100%)",
-                }}
-                aria-label="Painting professionals at work"
-                role="img"
-              >
-                {/* Placeholder visual */}
-                <div className="h-full flex flex-col items-center justify-center gap-4 text-white/50">
-                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                    <rect
-                      x="10"
-                      y="20"
-                      width="60"
-                      height="45"
-                      rx="4"
-                      fill="rgba(255,255,255,0.15)"
-                    />
-                    <path
-                      d="M20 55 L36 38 L46 48 L56 36 L68 55Z"
-                      fill="rgba(255,255,255,0.2)"
-                    />
-                    <circle
-                      cx="54"
-                      cy="30"
-                      r="8"
-                      fill="rgba(255,255,255,0.25)"
-                    />
-                  </svg>
-                  <span className="text-sm font-semibold uppercase tracking-widest">
-                    Gallery Photo
-                  </span>
-                </div>
+              <div className="rounded-xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                <img
+                  src={interiorImg}
+                  alt="Interior painting by Lakeland Painting Company"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Floating badge */}
               <div
