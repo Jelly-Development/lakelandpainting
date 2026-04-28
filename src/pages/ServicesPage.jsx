@@ -41,7 +41,7 @@ const serviceData = {
       "Looking for a residential painter in Lakeland, FL? Lakeland Painting Company has served homeowners across Polk County for over 15 years. Call 863-670-1601 for a free estimate.",
     services: [
       {
-        tag: "Bread & Butter",
+        tag: "Exterior",
         image: extImg,
         title: "Exterior Residential Painting",
         body: "Florida's intense sun, humidity, and afternoon storms punish exterior paint faster than almost anywhere in the country. Our exterior process starts with thorough power washing, surface repair, caulking of all gaps and cracks, and priming of bare wood and masonry before a single drop of finish coat is applied. We use premium paints formulated to resist mold, fade, and moisture in Central Florida's climate. The result is a finish that looks great for years, not months.",

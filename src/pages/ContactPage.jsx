@@ -31,10 +31,20 @@ export default function ContactPage() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
+  const encode = data =>
+    Object.keys(data)
+      .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+      .join('&');
+
   const handleSubmit = e => {
     e.preventDefault();
-    // In production, wire to a form backend (Netlify, Formspree, etc.)
-    setSubmitted(true);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...form }),
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => alert('Something went wrong. Please call us directly at ' + PHONE));
   };
 
   return (
@@ -126,7 +136,8 @@ export default function ContactPage() {
                     <h2 className="font-display font-bold text-brand-navy text-2xl mb-1">Get Your Free Estimate</h2>
                     <p className="text-brand-gray text-sm mb-6">No obligation. We'll get back to you within one business day.</p>
 
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+                      <input type="hidden" name="form-name" value="contact" />
                       <div className="grid gap-5 sm:grid-cols-2">
                         <div>
                           <label className="block text-sm font-semibold text-brand-dark mb-1" htmlFor="name">
