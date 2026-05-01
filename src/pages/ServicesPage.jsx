@@ -104,12 +104,11 @@ const serviceData = {
         tag: "Commercial Painting",
         image: comExtImg,
         title: "Commercial Painting Services",
-        body: "A well-maintained property communicates professionalism and attracts customers. We work with property managers, business owners, and HOAs on everything from storefront exteriors to interior office spaces. Our team works efficiently and can schedule around your operating hours — evenings, weekends, or in phases — to minimize disruption. Commercial-grade coatings, clean job sites, and a detailed scope upfront every time.",
+        body: "A well-maintained property communicates professionalism and attracts customers. We work with property managers, business owners, and HOAs on everything from storefront exteriors to interior office spaces. Our team works efficiently and can schedule work in phases to minimize disruption to your operations. Commercial-grade coatings, clean job sites, and a detailed scope upfront every time.",
         bullets: [
           "Storefronts, offices, warehouses, and multi-unit buildings",
           "Interior and exterior commercial painting",
           "HOA and property management partnerships",
-          "Flexible scheduling — evenings and weekends available",
           "Low-odor and zero-VOC paint options",
         ],
       },
@@ -256,7 +255,10 @@ export default function ServicesPage() {
                 </a>
               </div>
               {/* Service photo */}
-              <div className="rounded-xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <div
+                className="rounded-xl overflow-hidden"
+                style={{ aspectRatio: "4/3" }}
+              >
                 <img
                   src={svc.image}
                   alt={svc.title}

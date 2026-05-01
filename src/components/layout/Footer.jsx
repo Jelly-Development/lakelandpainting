@@ -60,9 +60,8 @@ export default function Footer() {
             <li><a href="tel:8636701601" className="text-white hover:text-brand-sky transition-colors font-semibold">863-670-1601</a></li>
             <li><a href={`mailto:${EMAIL}`} className="text-white hover:text-brand-sky transition-colors">{EMAIL}</a></li>
 <br />            <li className="leading-relaxed">
-              Mon–Fri: 7am–6pm<br/>
-              Sat: 8am–4pm<br/>
-              Sun: Closed
+              Mon–Fri: 9:00 AM – 5:00 PM<br/>
+              Sat–Sun: Closed
             </li>
           </ul>
         </div>
