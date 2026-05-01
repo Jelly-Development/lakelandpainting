@@ -44,11 +44,11 @@ const serviceData = {
         tag: "Exterior",
         image: extImg,
         title: "Exterior Residential Painting",
-        body: "Florida's intense sun, humidity, and afternoon storms punish exterior paint faster than almost anywhere in the country. Our exterior process starts with thorough power washing, surface repair, caulking of all gaps and cracks, and priming of bare wood and masonry before a single drop of finish coat is applied. We use premium paints formulated to resist mold, fade, and moisture in Central Florida's climate. The result is a finish that looks great for years, not months.",
+        body: "Florida's intense sun, humidity, and afternoon storms punish exterior paint faster than almost anywhere in the country. Our exterior process starts with thorough power washing, surface repair, caulking of all gaps and cracks, and priming of bare wood and masonry. We then liberally apply high-quality paints formulated to resist mold, fade, and moisture — protecting your home for years to come.",
         bullets: [
           "Power washing and complete surface prep",
           "Caulking, patching, and priming",
-          `Premium exterior paints for Florida's climate`,
+          "High-quality paints applied liberally for lasting protection",
           "Fascia, soffits, doors, and trim included",
           "Mold-resistant formulas for Florida climate",
         ],
@@ -57,12 +57,12 @@ const serviceData = {
         tag: "Interior",
         image: intImg,
         title: "Interior Residential Painting",
-        body: "A fresh coat of interior paint can completely transform the feel of your home. We take extra care to protect your furniture, floors, and fixtures with drop cloths and masking before our painters ever open a can. We cut crisp, clean lines at every ceiling, trim, and corner — no sloppy edges. We work efficiently and respect your home throughout the process, leaving it spotless at project close.",
+        body: "A fresh coat of interior paint can completely transform the feel of your home. We take extra care to protect your furniture, floors, and fixtures with drop cloths and masking before our painters ever open a can. We cut crisp, clean lines at every ceiling, trim, and corner — no sloppy edges. We apply 2 coats as necessary for full, even coverage, then leave your home spotless at project close.",
         bullets: [
           "Complete furniture and floor protection",
           "Ceiling, walls, trim, and doors painted",
+          "2 coats applied as necessary for full coverage",
           "Premium low-VOC interior paints available",
-          "Smooth application on all wall textures",
           "Final walkthrough and touch-up included",
         ],
       },
@@ -81,7 +81,7 @@ const serviceData = {
       {
         step: "03",
         title: "Expert Application",
-        text: "Two or more coats of premium paint applied to manufacturer specifications for a lasting finish.",
+        text: "Premium paint applied thoroughly for a durable, lasting finish.",
       },
       {
         step: "04",
@@ -151,11 +151,11 @@ const serviceData = {
         tag: "Paver Sealing",
         image: sealResImg,
         title: "Professional Paver Sealing",
-        body: "Unsealed pavers absorb oil, moisture, and organic material — leading to stains, shifting, and weed growth. Our paver sealing process starts with a thorough power wash to remove all dirt, mold, and efflorescence. We then apply professional-grade polymeric sand re-jointing where needed, and finish with a high-quality sealer that enhances the natural color of your pavers while creating a protective barrier against Florida's elements. We handle everything from residential driveways to large HOA communities.",
+        body: "Unsealed pavers absorb oil, moisture, and organic material — leading to stains, shifting, and weed growth. Our paver sealing process starts with a thorough power wash to remove all dirt, mold, and efflorescence. We then re-joint with high-quality sand made specifically for pavers where needed, and finish with a high-quality sealer that enhances the natural color of your pavers while creating a protective barrier against Florida's elements. We handle everything from residential driveways to large HOA communities.",
         bullets: [
           "Driveways, patios, walkways, and pool decks",
-          "Deep power washing and stain removal",
-          "Polymeric sand re-jointing where needed",
+          "Deep power washing",
+          "Sand re-jointing where needed",
           "Wet-look or natural-matte sealer options",
           "Residential, commercial, and HOA properties",
         ],
@@ -170,12 +170,12 @@ const serviceData = {
       {
         step: "02",
         title: "Power Washing",
-        text: "High-pressure wash removes all mold, dirt, stains, and loose material from the surface.",
+        text: "High-pressure wash removes all mold, dirt, and loose material from the surface.",
       },
       {
         step: "03",
         title: "Sand & Prep",
-        text: "Re-joint with polymeric sand where needed and allow surface to fully dry before sealing.",
+        text: "Re-joint with high-quality sand made specifically for pavers where needed before sealing.",
       },
       {
         step: "04",

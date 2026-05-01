@@ -46,11 +46,8 @@
 
   // Variants
   &--service {
-    .card__icon {
-      @apply w-12 h-12 rounded-md bg-brand-blue/10 flex items-center justify-center mb-4;
-      color: $blue;
-      font-size: 1.5rem;
-    }
+    border-left: none;
+    border-radius: $radius-md;
   }
 
   &--testimonial {

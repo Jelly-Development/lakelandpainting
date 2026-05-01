@@ -4,6 +4,9 @@ import { useIsMobile } from '../hooks/useIsMobile';
 import CtaBand from '../components/ui/CtaBand';
 import interiorImg from '../assets/interior/IMG_1666.jpeg';
 import heroImg from '../assets/exterior/IMG_1660.jpeg';
+import residentialCardImg from '../assets/exterior/IMG_1659.jpeg';
+import commercialCardImg from '../assets/commercial/IMG_1663.jpeg';
+import paverCardImg from '../assets/sealing/IMG_1667.jpeg';
 
 const PHONE_HREF = 'tel:8636701601';
 
@@ -86,16 +89,25 @@ const areaData = {
 
 const services = [
   {
+    image: residentialCardImg,
+    imageAlt: 'Residential painting project by Lakeland Painting Company',
+    label: 'Most Popular',
     title: 'Residential Painting',
-    text: `Premium house painting for homeowners. Thorough prep, clean application, and results that last.`,
+    text: 'Premium house painting for homeowners. Thorough prep, clean application, and results that last.',
     to: '/services/residential',
   },
   {
+    image: commercialCardImg,
+    imageAlt: 'Commercial painting project by Lakeland Painting Company',
+    label: 'Commercial',
     title: 'Commercial Painting',
     text: 'First impressions matter. We paint offices, retail spaces, and warehouses with minimal disruption to your business operations.',
     to: '/services/commercial',
   },
   {
+    image: paverCardImg,
+    imageAlt: 'Paver sealing project by Lakeland Painting Company',
+    label: 'Specialty',
     title: 'Paver Sealing',
     text: 'Driveways, patios, and pool decks sealed to withstand Florida rain, UV, and mold. Restore beauty and protect your investment.',
     to: '/services/paver-sealing',
@@ -238,11 +250,23 @@ export default function ServiceAreaPage() {
             </h2>          </div>
           <div className="features-grid">
             {services.map((svc) => (
-              <Link key={svc.title} to={svc.to} className="card card--service group block">
-                <div className="card__body">
-                  <h3 className="card__title">{svc.title}</h3>
-                  <p className="card__text">{svc.text}</p>
-                  <span className="inline-flex items-center gap-1 mt-4 text-brand-blue text-sm font-semibold group-hover:gap-2 transition-all">
+              <Link
+                key={svc.title}
+                to={svc.to}
+                className="card card--service group block relative"
+                style={{ minHeight: '380px' }}
+              >
+                <img
+                  src={svc.image}
+                  alt={svc.imageAlt}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute bottom-3 left-3 right-3 bg-white rounded-lg p-5">
+                  <span className="card__label">{svc.label}</span>
+                  <h3 className="card__title mb-2">{svc.title}</h3>
+                  <p className="card__text text-sm">{svc.text}</p>
+                  <span className="inline-flex items-center gap-1 mt-3 text-brand-blue text-sm font-semibold group-hover:gap-2 transition-all">
                     Learn More →
                   </span>
                 </div>
